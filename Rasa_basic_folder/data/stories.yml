@@ -1,0 +1,782 @@
+
+version: "2.0"
+stories:
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: Allahabad
+  - slot_was_set:
+    - location: Allahabad
+  - action: verify_location
+  - slot_was_set:
+    - location: Allahabad
+  - slot_was_set:
+    - location_ok: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: North Indian
+  - slot_was_set:
+    - cuisine: North Indian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: 300 to 700
+  - slot_was_set:
+    - price: 300 to 700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Allahabad
+  - slot_was_set:
+    - restaurant_exist: true
+  - action: utter_ask_email_response
+  - intent: email_response
+    entities:
+    - mail_response: Yes
+  - slot_was_set:
+    - mail_response: Yes
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - mail_id: abc@gmail.com
+  - slot_was_set:
+    - mail_id: abc@gmail.com
+  - action: action_send_mail
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: mumbai
+  - slot_was_set:
+    - location: mumbai
+  - action: verify_location
+  - slot_was_set:
+    - location: mumbai
+  - slot_was_set:
+    - location_ok: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: mumbai
+  - slot_was_set:
+    - restaurant_exist: true
+  - action: utter_ask_email_response
+  - intent: email_response
+    entities:
+    - mail_response: Yes
+  - slot_was_set:
+    - mail_response: Yes
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - mail_id: shilpagarg28@gmail.com
+  - slot_was_set:
+    - mail_id: shilpagarg28@gmail.com
+  - action: action_send_mail
+  - slot_was_set:
+    - mail_id: shilpagarg28@gmail.com
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: pune
+  - slot_was_set:
+    - location: pune
+  - action: verify_location
+  - slot_was_set:
+    - location: pune
+  - slot_was_set:
+    - location_ok: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: North Indian
+  - slot_was_set:
+    - cuisine: North Indian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: 300 to 700
+  - slot_was_set:
+    - price: 300 to 700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: pune
+  - slot_was_set:
+    - restaurant_exist: false
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - location: chandigarh
+  - slot_was_set:
+    - location: chandigarh
+  - action: verify_location
+  - slot_was_set:
+    - location: chandigarh
+  - slot_was_set:
+    - location_ok: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: American
+  - slot_was_set:
+    - cuisine: American
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: chandigarh
+  - slot_was_set:
+    - restaurant_exist: true
+  - action: utter_ask_email_response
+  - intent: email_response
+    entities:
+    - mail_response: No
+  - slot_was_set:
+    - mail_response: No
+  - action: utter_goodbye
+  - intent: goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: greet
+    entities:
+    - location: karnal
+  - slot_was_set:
+    - location: karnal
+  - action: verify_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_ok: false
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: banglore
+  - slot_was_set:
+    - location: banglore
+  - action: verify_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_ok: false
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: bangalore
+  - slot_was_set:
+    - location: bangalore
+  - action: verify_location
+  - slot_was_set:
+    - location: bangalore
+  - slot_was_set:
+    - location_ok: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: Italian
+  - slot_was_set:
+    - cuisine: Italian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: bangalore
+  - slot_was_set:
+    - restaurant_exist: true
+  - action: utter_ask_email_response
+  - intent: email_response
+    entities:
+    - mail_response: Yes
+  - slot_was_set:
+    - mail_response: Yes
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - mail_id: rakeshranjan0max89@gmail.com
+  - slot_was_set:
+    - mail_id: rakeshranjan0max89@gmail.com
+  - action: action_send_mail
+  - slot_was_set:
+    - mail_id: rakeshranjan0max89@gmail.com
+  - action: action_send_mail
+  - slot_was_set:
+    - mail_id: rakeshranjan0max89@gmail.com
+  - action: utter_goodbye
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - location: chandigarh
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: chandigarh
+  - action: verify_location
+  - slot_was_set:
+    - location: chandigarh
+  - slot_was_set:
+    - location_ok: true
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: 300 to 700
+  - slot_was_set:
+    - price: 300 to 700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: chandigarh
+  - slot_was_set:
+    - restaurant_exist: true
+  - action: utter_ask_email_response
+  - intent: email_response
+    entities:
+    - mail_response: Yes
+  - slot_was_set:
+    - mail_response: Yes
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - mail_id: shilpagarg28@gmail.com
+  - slot_was_set:
+    - mail_id: shilpagarg28@gmail.com
+  - action: action_send_mail
+  - slot_was_set:
+    - mail_id: shilpagarg28@gmail.com
+  - action: action_send_mail
+  - slot_was_set:
+    - mail_id: shilpagarg28@gmail.com
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: Agra
+  - slot_was_set:
+    - location: Agra
+  - action: verify_location
+  - slot_was_set:
+    - location: Agra
+  - slot_was_set:
+    - location_ok: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: South Indian
+  - slot_was_set:
+    - cuisine: South Indian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: lesser than 300
+  - slot_was_set:
+    - price: lesser than 300
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Agra
+  - slot_was_set:
+    - restaurant_exist: true
+  - action: utter_ask_email_response
+  - intent: email_response
+    entities:
+    - mail_response: No
+  - slot_was_set:
+    - mail_response: No
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: panipat
+  - slot_was_set:
+    - location: panipat
+  - action: verify_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_ok: false
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: mumbai
+  - slot_was_set:
+    - location: mumbai
+  - action: verify_location
+  - slot_was_set:
+    - location: mumbai
+  - slot_was_set:
+    - location_ok: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: Italian
+  - slot_was_set:
+    - cuisine: Italian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: 300 to 700
+  - slot_was_set:
+    - price: 300 to 700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: mumbai
+  - slot_was_set:
+    - restaurant_exist: true
+  - action: utter_ask_email_response
+  - intent: email_response
+    entities:
+    - mail_response: No
+  - slot_was_set:
+    - mail_response: No
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - location: pune
+  - slot_was_set:
+    - location: pune
+  - action: verify_location
+  - slot_was_set:
+    - location: pune
+  - slot_was_set:
+    - location_ok: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: South Indian
+  - slot_was_set:
+    - cuisine: South Indian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: pune
+  - slot_was_set:
+    - restaurant_exist: false
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - location: agra
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: agra
+  - action: verify_location
+  - slot_was_set:
+    - location: agra
+  - slot_was_set:
+    - location_ok: true
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: agra
+  - slot_was_set:
+    - restaurant_exist: true
+  - action: utter_ask_email_response
+  - intent: email_response
+    entities:
+    - mail_response: Yes
+  - slot_was_set:
+    - mail_response: Yes
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - mail_id: shilpagarg28@gmail.com
+  - slot_was_set:
+    - mail_id: shilpagarg28@gmail.com
+  - action: action_send_mail
+  - slot_was_set:
+    - mail_id: shilpagarg28@gmail.com
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: Rishikesh
+  - slot_was_set:
+    - location: Rishikesh
+  - action: verify_location
+  - slot_was_set:
+    - location: null
+  - slot_was_set:
+    - location_ok: false
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: Allahabad
+  - slot_was_set:
+    - location: Allahabad
+  - action: verify_location
+  - slot_was_set:
+    - location: Allahabad
+  - slot_was_set:
+    - location_ok: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+  - slot_was_set:
+    - cuisine: chinese
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: Allahabad
+  - slot_was_set:
+    - restaurant_exist: true
+  - action: utter_ask_email_response
+  - intent: email_response
+    entities:
+    - mail_response: Yes
+  - slot_was_set:
+    - mail_response: Yes
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - mail_id: shilpagarg28@gmail.com
+  - slot_was_set:
+    - mail_id: shilpagarg28@gmail.com
+  - action: action_send_mail
+  - slot_was_set:
+    - mail_id: shilpagarg28@gmail.com
+  - action: utter_goodbye
+  - intent: goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - location: chandigarh
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: chandigarh
+  - action: verify_location
+  - slot_was_set:
+    - location: chandigarh
+  - slot_was_set:
+    - location_ok: true
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: lesser than 300
+  - slot_was_set:
+    - price: lesser than 300
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: chandigarh
+  - slot_was_set:
+    - restaurant_exist: true
+  - action: utter_ask_email_response
+  - intent: affirm
+    entities:
+    - mail_response: no
+  - slot_was_set:
+    - mail_response: no
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+  - action: utter_ask_location
+  - intent: restaurant_search
+    entities:
+    - location: New Delhi
+  - slot_was_set:
+    - location: New Delhi
+  - action: verify_location
+  - slot_was_set:
+    - location: New Delhi
+  - slot_was_set:
+    - location_ok: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: Italian
+  - slot_was_set:
+    - cuisine: Italian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: lesser than 300
+  - slot_was_set:
+    - price: lesser than 300
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: New Delhi
+  - slot_was_set:
+    - restaurant_exist: true
+  - action: utter_ask_email_response
+  - intent: email_response
+    entities:
+    - mail_response: No
+  - slot_was_set:
+    - mail_response: No
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - location: New Delhi
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: New Delhi
+  - action: verify_location
+  - slot_was_set:
+    - location: New Delhi
+  - slot_was_set:
+    - location_ok: true
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: 300 to 700
+  - slot_was_set:
+    - price: 300 to 700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: New Delhi
+  - slot_was_set:
+    - restaurant_exist: true
+  - action: utter_ask_email_response
+  - intent: email_response
+    entities:
+    - mail_response: Yes
+  - slot_was_set:
+    - mail_response: Yes
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - mail_id: shilpagarg28@gmail.com
+  - slot_was_set:
+    - mail_id: shilpagarg28@gmail.com
+  - action: action_send_mail
+  - slot_was_set:
+    - mail_id: shilpagarg28@gmail.com
+  - action: action_send_mail
+  - slot_was_set:
+    - mail_id: shilpagarg28@gmail.com
+  - action: utter_goodbye
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: gurgaon
+  - slot_was_set:
+    - location: gurgaon
+  - action: verify_location
+  - slot_was_set:
+    - location: gurgaon
+  - slot_was_set:
+    - location_ok: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: South Indian
+  - slot_was_set:
+    - cuisine: South Indian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: lesser than 300
+  - slot_was_set:
+    - price: lesser than 300
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: gurgaon
+  - slot_was_set:
+    - restaurant_exist: true
+  - action: utter_ask_email_response
+  - intent: email_response
+    entities:
+    - mail_response: No
+  - slot_was_set:
+    - mail_response: No
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: restaurant_search
+    entities:
+    - location: noida
+  - slot_was_set:
+    - location: noida
+  - action: verify_location
+  - slot_was_set:
+    - location: noida
+  - slot_was_set:
+    - location_ok: true
+  - action: utter_ask_cuisine
+  - intent: restaurant_search
+    entities:
+    - cuisine: North Indian
+  - slot_was_set:
+    - cuisine: North Indian
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: noida
+  - slot_was_set:
+    - restaurant_exist: true
+  - action: utter_ask_email_response
+  - intent: email_response
+    entities:
+    - mail_response: Yes
+  - slot_was_set:
+    - mail_response: Yes
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - mail_id: abc@gmail.com
+  - slot_was_set:
+    - mail_id: abc@gmail.com
+  - action: action_send_mail
+  - slot_was_set:
+    - mail_id: abc@gmail.com
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: restaurant_search
+    entities:
+    - cuisine: chinese
+    - location: mumbai
+  - slot_was_set:
+    - cuisine: chinese
+  - slot_was_set:
+    - location: mumbai
+  - action: verify_location
+  - slot_was_set:
+    - location: mumbai
+  - slot_was_set:
+    - location_ok: true
+  - action: utter_ask_price
+  - intent: restaurant_search
+    entities:
+    - price: more than 700
+  - slot_was_set:
+    - price: more than 700
+  - action: action_search_restaurants
+  - slot_was_set:
+    - location: mumbai
+  - slot_was_set:
+    - restaurant_exist: true
+  - action: utter_ask_email_response
+  - intent: email_response
+    entities:
+    - mail_response: Yes
+  - slot_was_set:
+    - mail_response: Yes
+  - action: utter_ask_email
+  - intent: email
+    entities:
+    - mail_id: shilpagarg28@gmail.com
+  - slot_was_set:
+    - mail_id: shilpagarg28@gmail.com
+  - action: action_send_mail
+  - slot_was_set:
+    - mail_id: shilpagarg28@gmail.com
+  - action: utter_goodbye

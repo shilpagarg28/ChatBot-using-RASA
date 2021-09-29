@@ -1,0 +1,75 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hi
+    - hello
+    - [karnal](location)
+    - hello!
+    - Hello!
+    - Hola
+- intent: restaurant_search
+  examples: |
+    - find a restaurant
+    - [mumbai](location)
+    - [South Indian](cuisine)
+    - more options please
+    - find restaurant in [chennai](location)
+    - [South](cuisine) [Indian](cuisine)
+    - [300 to 700](price)
+    - Okay. Show me some in [Allahabad](location)
+    - [North Indian](cuisine)
+    - find restaurant
+    - [Chinese]{"entity": "cuisine", "value": "chinese"}
+    - [more than 700](price)
+    - find some restaurant
+    - [pune](location)
+    - find some restaurant in [chandigarh](location)
+    - [American](cuisine)
+    - [banglore](location)
+    - [bangalore](location)
+    - [Italian](cuisine)
+    - Im hungry. Looking out for some good [chinese](cuisine) restaurants in [chandigarh](location)
+    - fins some restaurant in [Agra](location)
+    - [lesser than 300](price)
+    - [panipat](location)
+    - search restaurant in [pune](location)
+    - Find some [chinese](cuisine) restaurant in [agra](location)
+    - Can you suggest some good restaurants in [Rishikesh](location)
+    - I'll prefer [chines]{"entity": "cuisine", "value": "chinese"}
+    - Im hungry. Looking out for some good restaurants
+    - [delhi]{"entity": "location", "value": "New Delhi"}
+    - find some [chinese](cuisine) restaurant in [delhi]{"entity": "location", "value": "New Delhi"}
+    - find restaurant in [gurgaon](location)
+    - search restaurant in [noida](location)
+    - find [chinese](cuisine) restaurant in [mumbai](location)
+    - [more than 700](price)
+- intent: affirm
+  examples: |
+    - thanks
+    - [no](mail_response). thanks
+- intent: goodbye
+  examples: |
+    - bye
+    - bye bye
+- intent: email_response
+  examples: |
+    - Yes(mail_response)
+    - [Yes](mail_response)
+    - [No](mail_response)
+    - [Yes](mail_response)
+- intent: email
+  examples: |
+    - [abc@gmail.com](mail_id)
+    - [shilpagarg28@gmail.com](mail_id)
+    - [rakeshranjan0max89@gmail.com](mail_id)
+    - yes. Please send it to [shilpagarg28@gmail.com](mail_id)
+    - [shilpagarg28@gmail.com](mail_id)
+- synonym: chinese
+  examples: |
+    - Chinese
+    - chines
+- synonym: New Delhi
+  examples: |
+    - delhi
